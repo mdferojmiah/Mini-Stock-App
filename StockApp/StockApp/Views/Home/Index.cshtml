@@ -1,0 +1,56 @@
+@model StockApp.Models.Stock
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="box trading-panel">
+    <div class="flex trading-panel-flex">
+        <div id="stock-price-panel">
+            <div class="list-container w-25">
+                <ul class="list">
+                    <li><a href="/MSFT">Microsoft</a></li>
+                    <li><a href="/AAPL">Apple</a></li>
+                    <li><a href="/AMZN">Amazon</a></li>
+                    <li><a href="/GOOGL">Google</a></li>
+                    <li><a href="/META">Meta</a></li>
+                    <li><a href="/NFLX">Netflix</a></li>
+                </ul>
+            </div>
+            <div class="stock">
+                <h1 class="stock-title">@Model.StockSymbol</h1>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>Opening Price:</td>
+                        <th>
+                            <small>$</small>
+                            <span>@Model.OpeningPrice.ToString("N")</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Current Price:</td>
+                        <th>
+                            <small>$</small>
+                            <span>@Model.CurrentPrice.ToString("N")</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Highest Price:</td>
+                        <th>
+                            <small>$</small>
+                            <span>@Model.HighestPrice.ToString("N")</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Lowest Price:</td>
+                        <th>
+                            <small>$</small>
+                            <span>@Model.LowestPrice.ToString("N")</span>
+                        </th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
